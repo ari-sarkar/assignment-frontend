@@ -1,0 +1,195 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar {
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  mat-icon {
+    color: red;
+  }
+}
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+  position: relative;
+  background: #c0392b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e44ad,
+    #c0392b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e44ad,
+    #c0392b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .fav-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    transform: translate(-5%, -5%);
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(42, 156, 255);
+    border-radius: 50%;
+    transition: 0.5s ease all;
+    box-shadow: -1px -1px 1px rgb(110, 110, 110);
+    z-index: 100;
+    mat-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size: 30px;
+    }
+    &:hover {
+      background-color: rgb(35, 129, 211);
+      cursor: pointer;
+    }
+  }
+  .users-wrapper {
+    width: 100%;
+    height: 100%;
+    //background-color: aqua;
+    padding-top: 20px;
+    .user-card {
+      width: 90%;
+      height: 12rem;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 15px;
+      .image {
+        width: 100%;
+        height: 30%;
+        //background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .person {
+          font-size: 50px;
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          //border: 2px solid rgb(206, 206, 206);
+          background-color: #eee;
+          position: absolute;
+          top: -30%;
+        }
+        .btns {
+          position: absolute;
+          right: 0;
+          top: 0;
+          //background-color: #c0392b;
+          width: 100px;
+          height: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          margin: 5px 5px 0;
+          button {
+            background-color: transparent;
+            //border: 1px solid rgb(112, 112, 112);
+            border: none;
+          }
+          .edit,
+          .delete {
+            font-size: 25px;
+            cursor: pointer;
+          }
+          .edit {
+            background-color: transparent;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: rgb(144, 203, 255);
+            transition: 0.5s all ease;
+            &:hover {
+              color: rgb(35, 152, 255);
+            }
+          }
+          .delete {
+            background-color: transparent;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 15px;
+            color: rgb(255, 144, 144);
+            margin-left: 2px;
+            &:hover {
+              color: rgb(255, 85, 85);
+            }
+          }
+        }
+      }
+      .card-content {
+        display: flex;
+        width: 100%;
+        height: 70%;
+        .left,
+        .right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
+        .left {
+          width: 40%;
+          height: 100%;
+          margin-left: 50px;
+          .logo {
+            color: rgb(121, 121, 121);
+            padding: 3px 0;
+          }
+        }
+        .right {
+          width: 60%;
+          height: 100%;
+          //margin-left: 30px;
+          padding-right: 8px;
+          .txt {
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .users-wrapper {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 20px;
+    //padding-left: 10px;
+  }
+  .user-card {
+    width: 30%;
+    margin: 0;
+  }
+
+  .skeleton-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 20px;
+    margin-top: 120px;
+    ion-item,
+    ion-label,
+    h3,
+    p {
+      width: 100%;
+    }
+  }
+}
